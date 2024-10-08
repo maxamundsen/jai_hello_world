@@ -1,0 +1,33 @@
+[6]  # Version number. Do not delete.
+
+[[workspace]]
+# These directories and files will be scanned when a workspace is opened so that search etc. works.
+./
+
+[ignore]
+.git
+build_debug
+.build
+.DS_Store
+jaivox.dSYM
+
+[[build commands]]
+build_working_dir:      ./
+open_panel_on_build:    true
+close_panel_on_success: false
+clear_build_output_before_running: true
+error_regex: ^(?P<file>.*):(?P<line>\d+),(?P<col>\d+): (?P<type>Error|Warning|Info|...):* (?P<msg>.*)|^(?P<msg1>.*error LNK.*)
+auto_jump_to_error:     false
+
+[Debug]
+build_command: jai build.jai
+
+[Build Debug Macos]
+build_command: arch -x86_64 /opt/jai/bin/jai-macos build.jai
+run_command: build_debug/jai_program
+key_binding: Cmd-Shift-B
+
+[[settings]]
+tab_size: 4
+insert_spaces_when_pressing_tab: true
+strip_trailing_whitespace_on_save: except_lines_with_cursor  # options: all, except_lines_with_cursor, disabled
