@@ -9,7 +9,7 @@
 build_debug
 .build
 .DS_Store
-jaivox.dSYM
+jai_program.dSYM
 
 [[build commands]]
 build_working_dir:      ./
